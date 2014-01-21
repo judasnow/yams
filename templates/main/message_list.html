@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block style %}
+{% endblock %}
+
+{% block header %}
+{% include "_header.html" %}
+{% endblock %}
+
+{% block info %}
+{% include "_info.html" %}
+{% endblock %}
+
+{% block left %}
+{% include "_nav.html" %}
+{% endblock %}
+
+{% block main %}
+<div class="span-16 last">
+<br />
+<table summary="This is the summary text for this table."  border="0" cellspacing="0" cellpadding="0">
+<caption><em>查看留言信息</em></caption>
+<thead>
+<tr>
+	<th class="span-2">留言者</th>
+	<th class="span-2">标题</th>
+	<th class="span-6">内容</th>
+	<th class="span-2">时间</th>
+	<th class="span-6">管理员回复</th>
+</tr>
+</thead>
+<tbody>
+	 {% for row in message_list %}
+	 <tr>
+		  <td>{{ row.poster }}</td>
+		  <td>{{ row.title }}</td>
+		  <td>{{ row.content }}</td>
+		  <td>{{ row.time }}</td>
+		  <td></td>
+ 	 </tr>
+	 {% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "_footer.html" %}
+{% endblock %}
+
+
+
+
+

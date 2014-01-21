@@ -1,0 +1,51 @@
+ <div class="span-4" id="left">
+	 <div id="nav">
+		 <ul>	 
+			 <li>
+			 <span>缴费管理</span>
+			 <div class="sub_nav"> 
+				 <a href="/fees_admin">缴费信息管理</a>
+			 </div>	 
+			 </li>
+				 
+					 
+			 <li>
+			 <span>故障管理</span>
+			 <div class="sub_nav">
+	 	 	 	 <a href="/trouble_admin">故障报修管理</a>
+		 	 </div>	
+			 </li>
+
+			 <li>
+			 <span>留言管理</span>
+			 <div class="sub_nav">
+				 <a href="/message_admin">留言回复</a>
+			 </div>
+			 </li>
+
+			 <li>
+			 <span>PM管理</span>
+			 <div class="sub_nav">
+			 	 <a href="/pm_admin">下发通知信件(PM)</a>
+		 	 </div>
+			 </li>
+
+			 <li>
+			 <span>新闻管理</span>
+			 <div class="sub_nav">
+				 <a href="/news_admin">发布新闻</a>
+			 </div>
+			 </li>
+		 </ul>
+	 </div>
+<script>
+window.addEvent('domready', 
+	 function(){
+		 new Fx.Accordion($('nav'), 
+		 '#nav span', 
+		 '#nav .sub_nav');
+ 	 }
+ );
+</script>
+</div>
+

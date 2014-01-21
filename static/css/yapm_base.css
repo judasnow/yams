@@ -1,0 +1,83 @@
+body{
+	overflow-y:scroll;
+}
+#header{
+	 font-family:"Microsoft YaHei"; 
+	 margin-top:5px;
+	 padding-top:5px;
+	 border-bottom:2px solid #666;
+	 margin-bottom:5px;
+}
+#left{
+	 padding-right:5px;
+	 height:500px;
+}
+#main{
+	 padding:5px;
+	 margin-bottom:20px;
+}
+#footer{
+	border-top:1px dotted #606060;
+	text-align:center;
+	clear:both;
+	color:#999;
+	border-radius:3px;
+}
+#nav{
+	height:400px;
+	margin-top:5px;
+	background:#e0e0e0;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px
+	border:1px solid #999;
+}
+#nav ul{
+	 padding-top:20px;
+	 clear:both;
+	 list-style:none;
+}
+#nav li{
+	display:block;
+	line-height: 1.5;
+	display: list-item;
+	margin-top:5px;
+}
+#nav .sub_nav a:hover{
+	 color:#555;
+}
+#nav .sub_nav a:active{
+}
+#nav li span{
+	font-size:14px;
+	display:block;
+	color:#999;
+	cursor:pointer;
+	line-height:16px;
+	margin:0 0 4px 0;
+	padding:5px 5px 1px;
+}
+#nav .sub_nav a{
+	color:#777;
+	font-size:12px;
+	text-decoration: none;
+	display: block;
+	overflow: hidden;
+	padding: 5px 0 5px 5px;
+}
+#info{
+	color:#333;
+	margin-left:10px;
+	padding:5px;
+}
+.username{
+	color:#069;
+	font-weight:bold;
+}
+.role{
+	color:#ddd;
+}
+
+
+

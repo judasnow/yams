@@ -1,0 +1,11 @@
+﻿{% if user_id %}
+<div id="info">
+	 <span class="role">
+		 #管理员
+	 </span>
+	 <span class="username">
+		 {{user_id}}
+	 </span>
+	 <span><a href="/logout">退出登录</a></span>
+</div>
+{% endif %}

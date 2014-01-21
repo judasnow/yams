@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block style %}
+fieldset{
+	 border:0;
+}
+legend{
+	 color:#606060;
+	 border-bottom:2px dotted #333;
+}
+label{
+	 color:#999;
+	 font-weight:100;
+}
+#des{
+	 border:1px dotted #b41717;
+	 color:#b41717;
+}
+#address{
+	 border:1px dotted #666;
+}
+#tel{
+	 border:1px dotted #666;
+}
+.err{
+	 color:#f66;
+}
+.succ{
+	 color:#096;
+}
+{% endblock %}
+
+{% block header %}
+{% include "_header.html" %}
+{% endblock %}
+
+{% block info %}
+{% include "_info.html" %}
+{% endblock %}
+
+{% block left %}
+{% include "_nav.html" %}
+{% endblock %}
+
+{% block main %}
+	<div class="span-12 last">
+	<br />
+	<form id="trouble_post" action="/trouble_post" method="post">
+	<fieldset>
+	<legend>请填写故障报修单</legend>
+		 <p class="message">
+			 {% if message_code == -2 %}
+			 <b class="err">故障登记过程错误（内部错误）</b>
+			 {% endif %}
+
+			 {% if message_code == -1 %}
+			 <b class="err">请完整填写报修表单</b>
+			 {% endif %}
+
+			 {% if message_code == 0 %}
+			 <b class="succ">故障登记成功</b>
+			 {% endif %}
+		</p>
+		<p>
+			<label for="address">地址</label><br>
+			<input type="text" class="text" name="address" id="address" value="">
+		</p>
+	 	<p>
+	 	 	<label for="tel">联系方式（电话）</label><br>
+	 	 	<input type="text" class="text" id="tel" name="tel" value="">
+	 	</p>
+		<p>
+		 	<label for="des">故障描述</label><br>
+			<textarea name="des" id="des" rows="3" cols="20"></textarea>
+		</p>
+	 	<hr />
+	        <p>
+	 	 	<input type="submit" value="提交故障">
+	 	 	<input type="reset" value="重置表单">
+		</p>
+        </fieldset>
+        </form>
+	</div> 
+{% endblock %}
+
+{% block footer %}
+{% include "_footer.html" %}
+{% endblock %}
+

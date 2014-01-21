@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block style %}
+caption{
+	 background:#fff;
+}
+{% endblock %}
+
+{% block header %}
+{% include "_header.html" %}
+{% endblock %}
+
+{% block info %}
+<div id="info">
+	<span class="role">
+		<span>#维护人员</span><span class="username">
+      	</span> 
+</div>
+{% endblock %}
+
+{% block left %}
+<div class="span-2">
+<br />
+</div>
+{% endblock %}
+
+{% block right %}
+<div class="span-2 last">
+<br />
+</div>
+{% endblock %}
+
+{% block main %}
+<div class="span-20 last">
+<br />
+<table summary="trouble list"  border="0" cellspacing="0" cellpadding="0">
+<caption>故障列表</caption>
+<thead>
+<tr>
+	<th class="span-4">故障编号</th>
+	<th class="span-6">详细描述</th>
+	<th class="span-4">地址</th>
+	<th class="span-3">用户联系电话</th>
+	<th class="span-2">状态</th>
+	<th class="span-4">工作人员编号</th>
+</tr>
+</thead>
+<tbody>
+	 {% for row in troub_list %}
+	 <tr>
+		  <td>{{ row.trouble_no }}</td>
+		  <td>{{ row.des }}</td>
+		  <td>{{ row.address }}</td>
+		  <td>{{ row.tel }}</td>
+		  <td>{{ row.status }}</td>
+		  <td>{{ row.worker }}</td>
+ 	 </tr>
+	 {% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "_footer.html" %}
+{% endblock %}
+
+
+
+
+
+

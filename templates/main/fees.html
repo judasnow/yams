@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block style %}
+	caption{
+		background:#fff;
+		border-bottom:1px dotted #999;
+		padding:5px;
+		margin-bottom:20px;
+	}
+{% endblock %}
+
+{% block header %}
+{% include "_header.html" %}
+{% endblock %}
+
+{% block left %}
+{% include "_nav.html" %}
+{% endblock %}
+
+{% block info %}
+{% include "_info.html" %}
+{% endblock %}
+
+{% block main %}
+	 <div class="span-12 last">
+		 <br />
+		 {% block fees_list %}
+		 <table summary="缴费信息" border="0" cellspacing="0" cellpadding="0"> 
+			 <caption>这是您{{years}}年{{month}}月份的缴费清单</caption> 
+			 <tr> 
+				 <th class="span-4">费用名称</th>
+				 <th class="span-4">金额（￥）</th>
+				 <th class="span-4 last">状态</th>
+			 </tr> 
+			 {% for row in fees_list %}
+			 <tr>
+				 {% if row.status == 1 %}
+				 {% endif %}
+				 <td>{{ row.name }}</td>
+				 <td>{{ row.sum }}</td>
+				 <td>{{ row.status }}</td>
+ 	 	 	 </tr>
+	 	 	 {% endfor %} 
+			
+		 	 <tfoot> 
+				 <!---td colspan="2">当月合计应缴 <b>：</b>{{all_sum}} （￥）， 已缴 <b>：</b> （￥）， 还应缴 <b>：</b> （￥）</td--> 
+		 	 </tfoot> 
+		 </table>
+		 {% endblock %}
+	</div>
+{% endblock %}
+
+{% block footer %}
+{%include "_footer.html" %}
+{% endblock %}

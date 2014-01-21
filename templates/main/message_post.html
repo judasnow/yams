@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block style %}
+fieldset{
+	 border:0;
+}
+legend{
+	 color:#303030;
+	 border-bottom:2px dotted #333;
+}
+label{
+	 color:#999;
+	 font-weight:100;
+}
+.err{
+	 color:#f66;
+}
+.succ{
+	 color:#096;
+}
+{% endblock %}
+
+{% block header %}
+{% include "_header.html" %}
+{% endblock %}
+
+{% block info %}
+{% include "_info.html" %}
+{% endblock %}
+
+{% block left %}
+{% include "_nav.html" %}
+{% endblock %}
+
+{% block main %}
+	<div class="span-12 last">
+	<br />
+	<form id="message_post" action="/message_post" method="post">
+	<fieldset>
+	<legend>填写留言单</legend>
+		 <p class="message">
+			 {% if message_code == -2 %}
+			 <b class="err">留言过程出错（内部错误）</b>
+			 {% endif %}
+
+			 {% if message_code == -1 %}
+			 <b class="err">请完整填写表单</b>
+			 {% endif %}
+
+			 {% if message_code == 0 %}
+			 <b class="succ">留言登记成功</b>
+			 {% endif %}
+		</p>
+		<p>
+			<label for="title">标题</label><br>
+			<input type="text" class="text" name="title" id="title" value="">
+		</p>
+		<p>
+		 	<label for="content">留言内容</label><br>
+			<textarea name="content" id="content" rows="3" cols="20"></textarea>
+		</p>
+	 	<hr />
+	        <p>
+	 	 	<input type="submit" value="提交留言">
+	 	 	<input type="reset" value="重置表单">
+		</p>
+        </fieldset>
+        </form>
+	</div> 
+{% endblock %}
+
+{% block footer %}
+{% include "_footer.html" %}
+{% endblock %}
+
+
